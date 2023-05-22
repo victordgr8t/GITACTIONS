@@ -5,6 +5,7 @@ on:
     branches:
       - main
   pull_request:
+    branches:
       - main
   workflow_dispatch:
 
@@ -12,14 +13,16 @@ jobs:
   hello:
     runs-on: ubuntu-latest   
     steps:
-      - uses: actions/checkout@v2
-      - name: hello world
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Hello world
         run: echo "Hello World"
         shell: bash
 
-   goodbye:
-     runs-on: ubuntu-latest
-     steps:
-       - name: goodbye world
-         run: echo "Goodbye world"
-         shell: bash
+  goodbye:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Goodbye world
+        run: echo "Goodbye world"
+        shell: bash
+
